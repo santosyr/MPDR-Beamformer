@@ -438,7 +438,7 @@ $$\mathbf{h}_{i+1} = \mathbf{h}_i + \alpha_i\,\mathbf{p}_i, \qquad \mathbf{r}_{i
 
 $$\beta_i = \frac{\mathbf{r}_{i+1}^{H}\mathbf{r}_{i+1}}{\mathbf{r}_i^{H}\mathbf{r}_i}, \qquad \mathbf{p}_{i+1} = \mathbf{r}_{i+1} + \beta_i\,\mathbf{p}_i$$
 
-The iteration stops when $\|\mathbf{r}_{i+1}\| < \varepsilon$ or after `max_iter` steps. For a positive-definite system, CG converges in at most $N$ steps; in practice it reaches machine precision in far fewer iterations when $\hat{\mathbf{R}}_{xx}$ is well-conditioned. The dominant cost per iteration is one matrix-vector product $\hat{\mathbf{R}}_{xx}\mathbf{p}_i \in \mathcal{O}(N^2)$.
+The iteration stops when $|\mathbf{r}_{i+1}| < \varepsilon$ or after `max_iter` steps. For a positive-definite system, CG converges in at most $N$ steps; in practice it reaches machine precision in far fewer iterations when $\hat{\mathbf{R}}_{xx}$ is well-conditioned. The dominant cost per iteration is one matrix-vector product $\hat{\mathbf{R}}_{xx}\mathbf{p}_i \in \mathcal{O}(N^2)$.
 
 ### 7.5 Distributed CG via Average Consensus
 
