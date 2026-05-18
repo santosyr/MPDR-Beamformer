@@ -68,7 +68,7 @@ mpdr-beamformer/
 |---|---|
 | `steering.py` | Converts a direction $(\theta, \varphi)$ and sensor positions into a complex phase-shift vector. All solvers and the plotter depend on this. |
 | `mpdr.py` | The three beamformer solvers: `theoretical`, `estimated`, `distributed`. |
-| `dsp.py` | Signal simulation (AWGN, $n$-PSK), adaptive filtering (NLMS), and the Average Consensus algorithm for distributed computing. |
+| `dsp.py` | Signal simulation (AWGN, $n$-PSK), and the Average Consensus algorithm for distributed computing. |
 | `plotter.py` | Polar, Cartesian, 3-D spatial, and array-topology plots. Backend-agnostic: selects Qt, Tk, Wx, or Agg automatically. |
 
 ---
