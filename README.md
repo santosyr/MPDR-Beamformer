@@ -288,11 +288,8 @@ Utility functions for signal simulation and distributed computing.
 |---|---|
 | `awgn(shape, power)` | Complex or real AWGN with variance $\sigma^2 =$ `power`. |
 | `npsk(num_symbols, n)` | Random $n$-PSK symbol sequence with unit average power. |
-| `nlms(x_k, s_k, mu)` | Normalised Least Mean Squares adaptive filter. |
 | `adjacency_matrix(network)` | Build an adjacency matrix from a dictionary network definition. |
-| `connectivity_graph(centers, method, k)` | Build an adjacency matrix from node positions using KNN, MST, or hybrid strategies. |
 | `average_consensus(A, u0)` | Finite-time exact average consensus on a connected graph. |
-| `elementwise_consensus(A, local_matrices)` | Element-wise consensus for aggregating complex matrices. |
 
 #### Building a network topology
 
@@ -300,7 +297,7 @@ Utility functions for signal simulation and distributed computing.
 from Functions import dsp
 import numpy as np
 
-# Option A: hand-crafted dictionary (small networks)
+# hand-crafted dictionary
 network = {
     "Node1": {"connections": ["Node2"]},
     "Node2": {"connections": ["Node1", "Node3"]},
@@ -308,9 +305,6 @@ network = {
 }
 A = dsp.adjacency_matrix(network)
 
-# Option B: position-based automatic construction (large or randomised deployments)
-centers = np.array([[0,0,0], [5,0,0], [10,0,0], [5,5,0]], dtype=float)
-A = dsp.connectivity_graph(centers, method='mst_knn', k=2)
 ```
 
 ---
