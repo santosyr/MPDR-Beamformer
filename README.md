@@ -560,21 +560,6 @@ pos_L = np.vstack([
 ])
 ```
 
-### Changing the network topology
-
-Use `dsp.connectivity_graph` to generate the adjacency matrix automatically from node centroid positions:
-
-```python
-from Functions import dsp
-import numpy as np
-
-# Compute the centroid of each node's sensor cluster
-centers = np.array([pos.mean(axis=0) for pos in node_positions])
-
-# Hybrid MST + 2-NN topology (recommended for consensus algorithms)
-adj = dsp.connectivity_graph(centers, method='mst_knn', k=2)
-```
-
 ---
 
 ## 10. Citation
